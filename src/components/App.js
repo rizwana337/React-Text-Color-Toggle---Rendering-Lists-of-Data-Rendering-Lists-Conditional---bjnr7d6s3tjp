@@ -2,15 +2,15 @@ import React, {useEffect, useState} from 'react'
 import '../styles/App.css';
 
 const App = () => {
-  const [active, setActive] = useState(false);
-
-  const onClickChange = () => {
-    setActive(!active);
-  };
+  const[style, setStyle] = useState("redColor");
+//code here 
+const changeStyle = () => {
+style == "redColor" ? setStyle("blueColor") : setStyle("redColor");
+}
   return (
     <div id="main">
-      <p className={"text"} style={{ color: active ? "red" : "blue" }} >Newton School</p>
-      <button id='button' onClick={onClickChange}>Change Style</button>
+      <p className={style} >Newton School</p>
+      <button id='button' onClick={changeStyle}>Change Style</button>
     </div>
   )
 }
